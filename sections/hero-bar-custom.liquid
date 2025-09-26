@@ -1,0 +1,93 @@
+{{ 'hero-bar-custom.css' | asset_url | stylesheet_tag }}
+
+<section class="hero-bar-section" {{ section.shopify_attributes }}>
+  {% if section.settings.hero_image %}
+    <div class="hero-image-wrapper">
+      {% if section.settings.hero_image %}
+        <div class="hero-image-wrapper">
+          <img
+            src="{{ section.settings.hero_image | image_url: width: 1920 }}"
+            srcset="
+        {{ section.settings.hero_image | image_url: width: 768 }} 768w,
+        {{ section.settings.hero_image | image_url: width: 1200 }} 1200w,
+        {{ section.settings.hero_image | image_url: width: 1920 }} 1920w
+      "
+            sizes="100vw"
+            alt="Hero Image"
+            class="hero-image"
+            width="{{ section.settings.hero_image.width }}"
+            height="{{ section.settings.hero_image.height }}">
+        </div>
+      {% endif %}
+
+    </div>
+  {% endif %}
+
+  {% for block in section.blocks %}
+    {% if block.type == 'text' %}
+      <h1 class="hero-text" style="font-size: {{ block.settings.font_size }}px; color: {{ block.settings.text_color }};">
+        {{ block.settings.text }}
+      </h1>
+    {% elsif block.type == 'subtext' %}
+      <p class="hero-subtext">
+        {{ block.settings.text }}
+      </p>
+    {% endif %}
+  {% endfor %}
+</section>
+
+{% schema %}
+  {
+    "name": "Hero Bar Custom",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Hero Image"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Main Text",
+        "settings": [
+          {
+            "type": "range",
+            "id": "font_size",
+            "label": "Font size (px)",
+            "min": 12,
+            "max": 72,
+            "step": 1,
+            "default": 36
+          }, {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text color",
+            "default": "#ffffff"
+          }, {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "Your Hero Title"
+          }
+        ]
+      }, {
+        "type": "subtext",
+        "name": "Sub Text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Subtext",
+            "default": "Your subheading here"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Bar Custom"
+      }
+    ]
+  }
+{% endschema %}

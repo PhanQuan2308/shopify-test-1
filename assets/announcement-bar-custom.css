@@ -1,0 +1,30 @@
+.announcement-bar-container {
+    height: 100%;
+    max-width: 100%;
+}
+
+.announcement-bar-container .announcement-bar-content {
+    background-color: rgb(242, 241, 237);
+    color: #67645e;
+    max-width: 95%;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0.6rem;
+}
+
+.announcement-bar-container .announcement-bar-content h1 {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .announcement-bar-container .announcement-bar-content h1 {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .announcement-bar-container .announcement-bar-content h1 {
+        font-size: 0.7rem;
+    }
+}

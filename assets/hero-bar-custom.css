@@ -1,0 +1,18 @@
+.hero-bar-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-image-wrapper {
+  width: 100%;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; 
+}
