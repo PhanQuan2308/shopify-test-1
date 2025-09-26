@@ -117,9 +117,20 @@
         "enable_transparent_header_collection": false,
         "collection_color_scheme": "default"
       }
+    },
+    "announcement_bar_custom_7FXhVF": {
+      "type": "Announcement-bar-custom",
+      "name": "Announcement Bar Custom",
+      "settings": {
+        "announcement_text": "FREE US SHIPPING ON ORDERS OVER $45",
+        "bg_color": "#f2f1ed",
+        "text_color": "#67645e",
+        "font_size": 16
+      }
     }
   },
   "order": [
+    "announcement_bar_custom_7FXhVF",
     "header_announcements_9jGBFp",
     "header_section"
   ]
