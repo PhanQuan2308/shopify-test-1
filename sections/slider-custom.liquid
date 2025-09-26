@@ -77,15 +77,17 @@
     font-size: 2rem;
     margin-bottom: 12px;
     position: absolute;
-    left: 10%;
+    right: 5%;
     bottom: 20%;
     color: white;
+    background-color: red;
+    font-weight: lighter;
   }
   .slide-button {
     max-width: 89vw;
     position: absolute;
     position: absolute;
-    left: 10%;
+    right: 30%;
     bottom: 10%;
     text-overflow: ellipsis;
   }
@@ -93,8 +95,8 @@
     position: relative;
     display: inline-block;
     padding: 12px 24px;
-    border: 1px solid #999;
-    border-radius: 6px;
+    border: thin solid white;
+    border-radius: 40px;
     color: white;
     text-decoration: none;
     overflow: hidden;
@@ -140,27 +142,27 @@
 {% endstylesheet %}
 
 {% javascript %}
-  const slider = new Swiper(".my-slider", {
-    loop: false,
-    autoplay: {
-      delay: 1000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    }
-  });
+  // const slider = new Swiper(".my-slider", {
+  //   loop: false,
+  //   autoplay: {
+  //     delay: 1000,
+  //     disableOnInteraction: false
+  //   },
+  //   pagination: {
+  //     el: ".swiper-pagination",
+  //     clickable: true
+  //   }
+  // });
 
-  const sliderEl = document.querySelector(".my-slider");
+  // const sliderEl = document.querySelector(".my-slider");
 
-  sliderEl.addEventListener("mouseenter", () => {
-    slider.autoplay.stop();
-  });
+  // sliderEl.addEventListener("mouseenter", () => {
+  //   slider.autoplay.stop();
+  // });
 
-  sliderEl.addEventListener("mouseleave", () => {
-    slider.autoplay.start();
-  });
+  // sliderEl.addEventListener("mouseleave", () => {
+  //   slider.autoplay.start();
+  // });
   function computeNearestSide(e, el) {
     const rect = el.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -219,7 +221,7 @@
             "type": "text",
             "id": "title",
             "label": "Main Title",
-            "default": "Take your mini rhode routine on the go."
+            "default": "Effortless fall edits are here."
           },
           {
             "type": "text",
@@ -231,7 +233,7 @@
             "type": "text",
             "id": "button_text",
             "label": "Button Text",
-            "default": "Shop All"
+            "default": "Curated Combos"
           }, {
             "type": "url",
             "id": "link",
